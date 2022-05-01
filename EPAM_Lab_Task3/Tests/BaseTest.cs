@@ -19,7 +19,7 @@ namespace EPAM_Lab_Task3.Tests
         public static IEnumerable testData => GetTestDataXml();
         private static IEnumerable GetTestDataXml()
         {
-            string XMLpath = Directory.GetCurrentDirectory() + @"\Data.xml";
+            string XMLpath = Directory.GetCurrentDirectory() + @"\resources\Data.xml";
             var doc = XDocument.Load(XMLpath);
             return
             from testdata in doc.Descendants("testdata")
