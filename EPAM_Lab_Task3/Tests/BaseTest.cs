@@ -19,7 +19,8 @@ namespace EPAM_Lab_Task3.Tests
         public static IEnumerable testData => GetTestDataXml();
         private static IEnumerable GetTestDataXml()
         {
-            var doc = XDocument.Load(@"C:\Users\Olga Miller\tests .Net\EPAM_Lab_Task3\EPAM_Lab_Task3\resources\Data.xml");
+            string XMLpath = Directory.GetCurrentDirectory() + @"\Data.xml";
+            var doc = XDocument.Load(XMLpath);
             return
             from testdata in doc.Descendants("testdata")
             let searchItem = testdata.Attribute("searchItem").Value
